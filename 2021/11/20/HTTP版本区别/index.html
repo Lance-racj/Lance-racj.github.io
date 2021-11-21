@@ -22,16 +22,16 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="HTTP 1.0 与 HTTP 1.1 的区别 连接 &#x3D;&gt; 在HTTP 1.0 中使用短连接，也就是说每发一次HTTP请求都要经历TCP三次握手四次挥手的这个过程，这样明显效率是很低的。为了解决这个问题，在HTTP 1.1 中使用了长连接(keep-alive)，连接之后不会断开，即就是一次TCP连接可以发送很多次HTTP请求，不用去每次都连接一下TCP。">
+  <meta name="description" content="1.HTTP 1.0 与 HTTP 1.1 的区别 连接 &#x3D;&gt; 在HTTP 1.0 中使用短连接，也就是说每发一次HTTP请求都要经历TCP三次握手四次挥手的这个过程，这样明显效率是很低的。为了解决这个问题，在HTTP 1.1 中使用了长连接(keep-alive)，连接之后不会断开，即就是一次TCP连接可以发送很多次HTTP请求，不用去每次都连接一下TCP。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTTP版本区别">
 <meta property="og:url" content="http://example.com/2021/11/20/HTTP%E7%89%88%E6%9C%AC%E5%8C%BA%E5%88%AB/index.html">
 <meta property="og:site_name" content="Process">
-<meta property="og:description" content="HTTP 1.0 与 HTTP 1.1 的区别 连接 &#x3D;&gt; 在HTTP 1.0 中使用短连接，也就是说每发一次HTTP请求都要经历TCP三次握手四次挥手的这个过程，这样明显效率是很低的。为了解决这个问题，在HTTP 1.1 中使用了长连接(keep-alive)，连接之后不会断开，即就是一次TCP连接可以发送很多次HTTP请求，不用去每次都连接一下TCP。">
+<meta property="og:description" content="1.HTTP 1.0 与 HTTP 1.1 的区别 连接 &#x3D;&gt; 在HTTP 1.0 中使用短连接，也就是说每发一次HTTP请求都要经历TCP三次握手四次挥手的这个过程，这样明显效率是很低的。为了解决这个问题，在HTTP 1.1 中使用了长连接(keep-alive)，连接之后不会断开，即就是一次TCP连接可以发送很多次HTTP请求，不用去每次都连接一下TCP。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2021/11/20/HTTP%E7%89%88%E6%9C%AC%E5%8C%BA%E5%88%AB/%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8.jpg">
 <meta property="article:published_time" content="2021-11-20T05:46:37.000Z">
-<meta property="article:modified_time" content="2021-11-20T12:56:49.157Z">
+<meta property="article:modified_time" content="2021-11-21T06:33:48.098Z">
 <meta property="article:author" content="Jeremy liu">
 <meta property="article:tag" content="HTTP">
 <meta name="twitter:card" content="summary">
@@ -125,17 +125,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">3</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">2</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">2</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">3</span></a>
 
   </li>
   </ul>
@@ -188,10 +188,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-11-20 13:46:37 / 修改时间：20:56:49" itemprop="dateCreated datePublished" datetime="2021-11-20T13:46:37+08:00">2021-11-20</time>
+              <time title="创建时间：2021-11-20 13:46:37" itemprop="dateCreated datePublished" datetime="2021-11-20T13:46:37+08:00">2021-11-20</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-11-21 14:33:48" itemprop="dateModified" datetime="2021-11-21T14:33:48+08:00">2021-11-21</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -208,14 +214,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>994</span>
+              <span>1.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -227,7 +233,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h5 id="HTTP-1-0-与-HTTP-1-1-的区别"><a href="#HTTP-1-0-与-HTTP-1-1-的区别" class="headerlink" title="HTTP 1.0 与 HTTP 1.1 的区别"></a><em>HTTP 1.0 与 HTTP 1.1 的区别</em></h5><ul>
+        <h5 id="1-HTTP-1-0-与-HTTP-1-1-的区别"><a href="#1-HTTP-1-0-与-HTTP-1-1-的区别" class="headerlink" title="1.HTTP 1.0 与 HTTP 1.1 的区别"></a>1.<em>HTTP 1.0 与 HTTP 1.1 的区别</em></h5><ul>
 <li><p><strong>连接</strong> =&gt; 在HTTP 1.0 中使用短连接，也就是说每发一次HTTP请求都要经历TCP三次握手四次挥手的这个过程，这样明显效率是很低的。为了解决这个问题，在HTTP 1.1 中使用了长连接(keep-alive)，连接之后不会断开，即就是一次TCP连接可以发送很多次HTTP请求，不用去每次都连接一下TCP。</p>
 <span id="more"></span>
 
@@ -242,7 +248,7 @@
 <li><p><strong>缓存处理</strong> =&gt; HTTP 1.0中使用header的Expires和If-Modefined-Since作为缓存判断的标准，在HTTP 1.1中引入了更多缓存控制策略。</p>
 </li>
 </ul>
-<h5 id="HTTP-2-0-有什么新特性？"><a href="#HTTP-2-0-有什么新特性？" class="headerlink" title="HTTP 2.0 有什么新特性？"></a><em>HTTP 2.0 有什么新特性？</em></h5><p>   在了解HTTP 2.0新特性之前，先了解一下<em>HTTP 1.1 存在的一些问题</em></p>
+<h5 id="2-HTTP-2-0-有什么新特性？"><a href="#2-HTTP-2-0-有什么新特性？" class="headerlink" title="2.HTTP 2.0 有什么新特性？"></a>2.<em>HTTP 2.0 有什么新特性？</em></h5><p>   在了解HTTP 2.0新特性之前，先了解一下<em>HTTP 1.1 存在的一些问题</em></p>
 <ol>
 <li><p>不会压缩请求与响应报文的首部，导致不必要的网络流量。</p>
 </li>
@@ -259,7 +265,10 @@
 </ul>
 <p><img src="/2021/11/20/HTTP%E7%89%88%E6%9C%AC%E5%8C%BA%E5%88%AB/%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8.jpg" alt="多路复用"></p>
 <ul>
-<li><strong>支持服务器推送</strong> =&gt; 服务器可以经过计算主动将数据放至客户端缓存中。(举个例子，一个客户端请求了一个HTML文件，服务器就会知道它还需要例如css，js文件等很多附加资源，就会主动地将它们推送到客户端)，这样客户端下次就会直接从缓存中读取数据，这样就会节省很多时间。</li>
+<li><p><strong>支持服务器推送</strong> =&gt; 服务器可以经过计算主动将数据放至客户端缓存中。(举个例子，一个客户端请求了一个HTML文件，服务器就会知道它还需要例如css，js文件等很多附加资源，就会主动地将它们推送到客户端)，这样客户端下次就会直接从缓存中读取数据，这样就会节省很多时间。</p>
+</li>
+<li><p><strong>更好的利用带宽速度</strong> =&gt; 由于TCP连接是慢启动(开始会限制传输速度，随着时间的推移以及数据的成功传输，速度会逐渐提升)，如果是HTTP 1.1，高并发时每个连接都要经历这个慢启动的过程，在2.0中，只需要一个TCP连接，也就只需要经历一次慢启动过程，可以更高效的利用高速带宽。</p>
+</li>
 </ul>
 
     </div>
@@ -282,7 +291,10 @@
     <a href="/2021/11/20/%E4%BB%8A%E6%97%A5%E5%A4%B4%E6%9D%A1%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E8%BE%93%E5%87%BA%E9%A2%98/" rel="prev" title="今日头条前端面试输出题">
       <i class="fa fa-chevron-left"></i> 今日头条前端面试输出题
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/11/21/HTML5%E6%96%B0%E7%89%B9%E6%80%A7/" rel="next" title="HTML5新特性">
+      HTML5新特性 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -341,7 +353,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#HTTP-1-0-%E4%B8%8E-HTTP-1-1-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.</span> <span class="nav-text">HTTP 1.0 与 HTTP 1.1 的区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HTTP-2-0-%E6%9C%89%E4%BB%80%E4%B9%88%E6%96%B0%E7%89%B9%E6%80%A7%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">HTTP 2.0 有什么新特性？</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-HTTP-1-0-%E4%B8%8E-HTTP-1-1-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.</span> <span class="nav-text">1.HTTP 1.0 与 HTTP 1.1 的区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-HTTP-2-0-%E6%9C%89%E4%BB%80%E4%B9%88%E6%96%B0%E7%89%B9%E6%80%A7%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">2.HTTP 2.0 有什么新特性？</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -357,20 +369,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -428,13 +440,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">3k</span>
+    <span title="站点总字数">4k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">7 分钟</span>
+    <span title="站点阅读时长">10 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
