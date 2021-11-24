@@ -22,15 +22,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Process">
-<meta property="og:url" content="http://example.com/tags/JavaScript/index.html">
+  <meta name="description" content="在讲述这个问题之前，我们先来了解一下浏览器的渲染机制。（流式布局）  浏览器会将HTML转换为一个DOM树，将CSS转换为一个CSSOM树，然后DOM树和CSSOM树会结合生成一个渲染树(render tree)，render tree里面是不包含隐藏节点的，所以当隐藏节点被触发显示出来，render tree就会改变。 在知道了节点和样式以后，浏览器会计算节点的大小与位置，然后将它渲染到交给GP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浏览器的回流与重绘">
+<meta property="og:url" content="http://example.com/2021/11/24/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%9B%9E%E6%B5%81%E4%B8%8E%E9%87%8D%E7%BB%98/index.html">
 <meta property="og:site_name" content="Process">
+<meta property="og:description" content="在讲述这个问题之前，我们先来了解一下浏览器的渲染机制。（流式布局）  浏览器会将HTML转换为一个DOM树，将CSS转换为一个CSSOM树，然后DOM树和CSSOM树会结合生成一个渲染树(render tree)，render tree里面是不包含隐藏节点的，所以当隐藏节点被触发显示出来，render tree就会改变。 在知道了节点和样式以后，浏览器会计算节点的大小与位置，然后将它渲染到交给GP">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-24T03:13:37.000Z">
+<meta property="article:modified_time" content="2021-11-24T03:56:56.684Z">
 <meta property="article:author" content="Jeremy liu">
+<meta property="article:tag" content="前端优化">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/tags/JavaScript/">
+<link rel="canonical" href="http://example.com/2021/11/24/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%9B%9E%E6%B5%81%E4%B8%8E%E9%87%8D%E7%BB%98/">
 
 
 <script id="page-configurations">
@@ -38,12 +43,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>标签: JavaScript | Process</title>
+  <title>浏览器的回流与重绘 | Process</title>
   
 
 
@@ -180,51 +185,130 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">JavaScript
-          <small>标签</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/24/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%9B%9E%E6%B5%81%E4%B8%8E%E9%87%8D%E7%BB%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/1.jpg">
+      <meta itemprop="name" content="Jeremy liu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Process">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          浏览器的回流与重绘
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-11-24 11:13:37 / 修改时间：11:56:56" itemprop="dateCreated datePublished" datetime="2021-11-24T11:13:37+08:00">2021-11-24</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96/" itemprop="url" rel="index"><span itemprop="name">前端优化</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>891</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+        <p><em>在讲述这个问题之前，我们先来了解一下浏览器的渲染机制。（流式布局）</em></p>
+<ol>
+<li><em>浏览器会将HTML转换为一个DOM树，将CSS转换为一个CSSOM树，然后DOM树和CSSOM树会结合生成一个渲染树(render tree)，render tree里面是不包含隐藏节点的，所以当隐藏节点被触发显示出来，render tree就会改变。</em></li>
+<li><em>在知道了节点和样式以后，浏览器会计算节点的大小与位置，然后将它渲染到交给GPU渲染到浏览器的页面上。</em></li>
+</ol>
+<hr>
+<span id="more"></span>
+
+<h5 id="1-知道了这些之后，我们先来看回流："><a href="#1-知道了这些之后，我们先来看回流：" class="headerlink" title="1. 知道了这些之后，我们先来看回流："></a>1. 知道了这些之后，我们先来看回流：</h5><p>在渲染树中一些元素的结构或者尺寸发生改变时，浏览器会重新渲染部分或者全部文档的过程就叫做回流。（一般来说，只会重新渲染受到影响的元素节点）</p>
+<p>会导致回流的操作有：浏览器窗口大小发生改变，添加或者删除节点，激活CSS伪类（这个要分情况，比如改颜色就不算）。</p>
+<h5 id="2-再看看一下什么叫做重绘："><a href="#2-再看看一下什么叫做重绘：" class="headerlink" title="2. 再看看一下什么叫做重绘："></a>2. 再看看一下什么叫做重绘：</h5><p>只改变元素颜色等不影响大小（不影响大小也就是说不会影响到内部或者周围的布局）的属性，浏览器会直接将新的样式赋值给元素，不会重新渲染。</p>
+<hr>
+<p>通过这些，我们可以发现，<strong>回流是一定会引发重绘的，但重绘不一定会引发回流</strong>。</p>
+<p>也发现回流的性能消耗是远大于重绘的，因此我们要想提高前端页面的性能，就必须尽量避免回流。</p>
+<h5 id="3-下面是几个可以避免频繁回流与重绘的方式："><a href="#3-下面是几个可以避免频繁回流与重绘的方式：" class="headerlink" title="3. 下面是几个可以避免频繁回流与重绘的方式："></a>3. 下面是几个可以避免频繁回流与重绘的方式：</h5><ol>
+<li>尽量不要使用table布局。</li>
+<li>可以将元素脱离文档流，比如绝对定位。（但浮动往往起不到效果，因为大家都浮动了，还是会互相影响）。</li>
+<li>不要使用过深的css选择器。</li>
+<li>避免频繁的操作DOM。（比如说要在一个div盒子里面添加三个p，如果一个一个添加那就要操作三次，完全可以通过cloneNode克隆三个，一次性添加到里面去）（再就是把一些需要同时修改样式的通过className来修改样式，而不是一个个去修改，减少重绘次数）。</li>
+</ol>
+<h5 id="4-浏览器也会帮助我们："><a href="#4-浏览器也会帮助我们：" class="headerlink" title="4. 浏览器也会帮助我们："></a>4. 浏览器也会帮助我们：</h5><p>我们都知道频繁的回流与重绘很消耗性能，浏览器也会知道啊，所以在浏览器中会维护一个队列，把所有引发回流与重绘的操作放入这个队列里面去，等到队列中的操作到了一定的数量或者到了一定的时间间隔，浏览器就会flush队列，进行一个批处理，这样就会使得多次的回流与重绘变成一次，大大提升前端的性能。</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-22T16:20:31+08:00"
-              content="2021-11-22">
-          11-22
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96/" rel="tag"># 前端优化</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/22/%E5%A6%82%E4%BD%95%E8%87%AA%E5%B7%B1%E5%8A%A8%E6%89%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%91%A2/" itemprop="url">
-            <span itemprop="name">如何自己动手写一个深拷贝呢（外加数组判断方法）</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/24/leetcode%E9%A2%98%E8%A7%A3/" rel="prev" title="leetcode题解">
+      <i class="fa fa-chevron-left"></i> leetcode题解
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
@@ -277,6 +361,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-%E7%9F%A5%E9%81%93%E4%BA%86%E8%BF%99%E4%BA%9B%E4%B9%8B%E5%90%8E%EF%BC%8C%E6%88%91%E4%BB%AC%E5%85%88%E6%9D%A5%E7%9C%8B%E5%9B%9E%E6%B5%81%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">1. 知道了这些之后，我们先来看回流：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-%E5%86%8D%E7%9C%8B%E7%9C%8B%E4%B8%80%E4%B8%8B%E4%BB%80%E4%B9%88%E5%8F%AB%E5%81%9A%E9%87%8D%E7%BB%98%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">2. 再看看一下什么叫做重绘：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-%E4%B8%8B%E9%9D%A2%E6%98%AF%E5%87%A0%E4%B8%AA%E5%8F%AF%E4%BB%A5%E9%81%BF%E5%85%8D%E9%A2%91%E7%B9%81%E5%9B%9E%E6%B5%81%E4%B8%8E%E9%87%8D%E7%BB%98%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">3. 下面是几个可以避免频繁回流与重绘的方式：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B9%9F%E4%BC%9A%E5%B8%AE%E5%8A%A9%E6%88%91%E4%BB%AC%EF%BC%9A"><span class="nav-number">4.</span> <span class="nav-text">4. 浏览器也会帮助我们：</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
