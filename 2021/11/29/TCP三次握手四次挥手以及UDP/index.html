@@ -22,15 +22,23 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Process">
-<meta property="og:url" content="http://example.com/categories/HTTP/index.html">
+  <meta name="description" content="1. TCP和UDP的区别 UDP是无连接的协议，会尽最大努力，但不保证可靠交付。TCP是面向连接的协议，传数据前先建立连接（3次握手4次挥手），有许多种办法保证可靠。 TCP首部有20个字节，但UDP首部只有8个字节，开销更小一些。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TCP三次握手四次挥手以及UDP">
+<meta property="og:url" content="http://example.com/2021/11/29/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B%E4%BB%A5%E5%8F%8AUDP/index.html">
 <meta property="og:site_name" content="Process">
+<meta property="og:description" content="1. TCP和UDP的区别 UDP是无连接的协议，会尽最大努力，但不保证可靠交付。TCP是面向连接的协议，传数据前先建立连接（3次握手4次挥手），有许多种办法保证可靠。 TCP首部有20个字节，但UDP首部只有8个字节，开销更小一些。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2021/11/29/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B%E4%BB%A5%E5%8F%8AUDP/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.jpg">
+<meta property="og:image" content="http://example.com/2021/11/29/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B%E4%BB%A5%E5%8F%8AUDP/%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B.jpg">
+<meta property="article:published_time" content="2021-11-29T06:54:19.000Z">
+<meta property="article:modified_time" content="2021-11-29T07:30:00.243Z">
 <meta property="article:author" content="Jeremy liu">
+<meta property="article:tag" content="TCP">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/11/29/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B%E4%BB%A5%E5%8F%8AUDP/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.jpg">
 
-<link rel="canonical" href="http://example.com/categories/HTTP/">
+<link rel="canonical" href="http://example.com/2021/11/29/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B%E4%BB%A5%E5%8F%8AUDP/">
 
 
 <script id="page-configurations">
@@ -38,12 +46,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>分类: HTTP | Process</title>
+  <title>TCP三次握手四次挥手以及UDP | Process</title>
   
 
 
@@ -180,91 +188,138 @@
         <div class="content-wrap">
           
 
-          <div class="content category">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">HTTP
-          <small>分类</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/29/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B%E4%BB%A5%E5%8F%8AUDP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/1.jpg">
+      <meta itemprop="name" content="Jeremy liu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Process">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          TCP三次握手四次挥手以及UDP
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-11-29 14:54:19 / 修改时间：15:30:00" itemprop="dateCreated datePublished" datetime="2021-11-29T14:54:19+08:00">2021-11-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TCP/" itemprop="url" rel="index"><span itemprop="name">TCP</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
-    </div>
+        <h5 id="1-TCP和UDP的区别"><a href="#1-TCP和UDP的区别" class="headerlink" title="1. TCP和UDP的区别"></a>1. TCP和UDP的区别</h5><ul>
+<li>UDP是无连接的协议，会尽最大努力，但不保证可靠交付。TCP是面向连接的协议，传数据前先建立连接（3次握手4次挥手），有许多种办法保证可靠。</li>
+<li>TCP首部有20个字节，但UDP首部只有8个字节，开销更小一些。</li>
+</ul>
+<span id="more"></span>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-29T14:16:27+08:00"
-              content="2021-11-29">
-          11-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/29/HTTP%E7%BC%93%E5%AD%98/" itemprop="url">
-            <span itemprop="name">HTTP缓存与浏览器缓存（不包含H5）</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-29T13:54:25+08:00"
-              content="2021-11-29">
-          11-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/29/https/" itemprop="url">
-            <span itemprop="name">HTTPS</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-20T13:46:37+08:00"
-              content="2021-11-20">
-          11-20
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/20/HTTP%E7%89%88%E6%9C%AC%E5%8C%BA%E5%88%AB/" itemprop="url">
-            <span itemprop="name">HTTP版本区别</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
+<ul>
+<li>TCP为一对一的全双工通信（点对点），UDP可以一对一，一对多，多对多。</li>
+<li>UDP速度更快且比TCP稍安全，TCP慢，效率低，易被网络攻击。</li>
+<li>TCP为字节流形式，UDP为数据报形式。</li>
+<li>UDP要的系统资源少，TCP需要系统资源较多。</li>
+<li>TCP拥有拥塞控制（在网络拥堵时，源主机的发送速率会降低），但是UDP没有，所以UDP在一些像IP电话，视频会议等实时应用上很好用。</li>
+</ul>
+<h5 id="2-TCP三次握手"><a href="#2-TCP三次握手" class="headerlink" title="2. TCP三次握手"></a>2. TCP三次握手</h5><p><strong>目的</strong>：建立起可靠的通信信道。</p>
+<p><img src="/2021/11/29/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B%E4%BB%A5%E5%8F%8AUDP/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.jpg" alt="三次握手"></p>
+<p><em><strong>过程 =&gt;</strong></em></p>
+<p>首先客户端的协议栈向服务端发送SYN包，同时告诉服务端当前发送的序列号是X，此时客户端进入 SYNC_SENT状态(<strong>服务器得知客户端发送能力和服务器接受能力是正常的</strong>)。</p>
+<p>服务端的协议栈收到这个包以后，使用 ACK 应答，此时应答的值为 X+1，表示对SYN 包 的确认，同时服务端也发送一个SYN包，告诉客户端当前我的发送序列号是Y，此时服务端进入SYNC_RCVD状态（<strong>客户端得到客户端的发送、接受能力，服务器的接受、发送能力都是正常的</strong>）</p>
+<p>客户端协议栈收到 ACK 以后，应用程序通过connect调用表示服务端的单向连接成功，此时状态为ESTABLISHED，同时客户端协议栈对服务器端的 SYN 进行应答，此时数据为Y+1，服务端收到客户端的应答包，此时服务端到客户单的单向连接也建立成功，服务器将进入ESTABLISHED状态（<strong>服务器得知服务器的接受能力和客户端的接受能力是正常的</strong>）。</p>
+<p><strong>结论</strong>：必须要三次连接，因为这样才可以双方都确保双方的接受能力均正常。</p>
+<h5 id="3-TCP四次挥手"><a href="#3-TCP四次挥手" class="headerlink" title="3. TCP四次挥手"></a>3. TCP四次挥手</h5><p><img src="/2021/11/29/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B%E4%BB%A5%E5%8F%8AUDP/%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B.jpg" alt="四次挥手"></p>
+<p><strong>过程=&gt;</strong></p>
+<p>第一次挥手：客户端发送FIN包，告诉服务器自己要断开了，然后进入FIN_WAIT_1状态。</p>
+<p>第二次挥手：服务器收到后向客户端发出ACK确认包，自己进入close_wait状态（仍可发数据）。</p>
+<p>第三次挥手：客户端收到ACK后进入FIN_WAIT_2状态，此时它没东西要发给服务器了，但服务器发的东西它仍得接收，在服务器数据发完之后，会向客户端发送一个FIN包表示自己发完了，此后进入lack_ACK状态。</p>
+<p>第四次挥手：客户端收到FIN包后，发送ACK确认给服务器，服务器收到后就会断开连接，2MSL后客户端也会断开。</p>
+<p><em><strong>一个小思考题，为什么要2MSL（报文在网络中最大的生存周期）后客户端才会断开？</strong></em></p>
+<p>有可能最后一个ACK服务器没收到，客户端会再发送一个ACK确保服务器关闭（在没收到的时候，服务器会向客户端发送一个FIN重传包）。</p>
+<p>避免新旧混淆，2MSL后，本次连接所产生的数据都会在网络中消失，防止下一次连接重用，新旧包混在一起。</p>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/TCP/" rel="tag"># TCP</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/29/HTTP%E7%BC%93%E5%AD%98/" rel="prev" title="HTTP缓存与浏览器缓存（不包含H5）">
+      <i class="fa fa-chevron-left"></i> HTTP缓存与浏览器缓存（不包含H5）
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
@@ -317,6 +372,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-TCP%E5%92%8CUDP%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.</span> <span class="nav-text">1. TCP和UDP的区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B"><span class="nav-number">2.</span> <span class="nav-text">2. TCP三次握手</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-TCP%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B"><span class="nav-number">3.</span> <span class="nav-text">3. TCP四次挥手</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
